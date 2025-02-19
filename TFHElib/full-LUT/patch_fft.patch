@@ -1,0 +1,26 @@
+diff --git a/src/libtfhe/fft_processors/spqlios/fft_processor_spqlios.cpp b/src/libtfhe/fft_processors/spqlios/fft_processor_spqlios.cpp
+index 88ce95f..d7fdd7d 100644
+--- a/src/libtfhe/fft_processors/spqlios/fft_processor_spqlios.cpp
++++ b/src/libtfhe/fft_processors/spqlios/fft_processor_spqlios.cpp
+@@ -120,7 +120,7 @@ FFT_Processor_Spqlios::~FFT_Processor_Spqlios() {
+     delete[] cosomegaxminus1;
+ }
+ 
+-thread_local FFT_Processor_Spqlios fftp1024(1024);
++thread_local FFT_Processor_Spqlios fftp1024(2048);
+ 
+ /**
+  * FFT functions 
+diff --git a/src/libtfhe/tgsw.cpp b/src/libtfhe/tgsw.cpp
+index b12c9f9..41d4837 100644
+--- a/src/libtfhe/tgsw.cpp
++++ b/src/libtfhe/tgsw.cpp
+@@ -24,7 +24,7 @@ TGswParams::TGswParams(int32_t l, int32_t Bgbit, const TLweParams *tlwe_params)
+         uint32_t temp0 = 1 << (32 - (i + 1) * Bgbit);
+         temp1 += temp0;
+     }
+-    offset = temp1 * halfBg;
++    offset = (temp1 * halfBg) + (1 << (31 - l * Bgbit));
+ 
+ }
+ 
