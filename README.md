@@ -17,6 +17,8 @@ There currently exist several implementations of the AES relying on TFHE. Here i
 
 Here is a list of new TFHE implementations that are not a part of our paper's benchmark:
 - an *FFT-based* implementation of the **"FHEW-like Leveled Homomorphic Evaluation: Refined Workflow and Polished Building Blocks"** paper, available on the [IACReprint](https://eprint.iacr.org/2024/1318.pdf).
+- a new implementation relying on Boolean circuit evaluation and Brent's Theorem (see [here](https://github.com/CryptoPenguin15/brent_optimal_scheduling_for_parallel_execution_of_boolean_circuits/tree/main) for more details)
+
  
 ## List of available implementations in this repository
 This repository contains implementations and links to state-of-the-art AES homomorphic evaluation under TFHE. Each folder at the root of this git repository corresponds to one TFHE library. In each of these folders, you will find implementations or shell scripts to download, compile, and execute implementations that already exist elsewhere on Git Hub. The names of the scripts are self-sufficient. To execute a script name script.sh, just enter the command "bash script.sh" on your terminal. If there is no script to execute, then a README file will explain how to install, compile, and run the implementation.   
@@ -27,6 +29,8 @@ The repository is structured as follows:
     - a **Hippogryph** folder containing scripts to install and run the framework **Hippogryph** available at https://github.com/CryptoExperts/Hippogryph.git. 
     - a **p-encodings** folder that contains scripts to install and run the p-encodings approach available at https://github.com/CryptoExperts/bpr-boolean-fhe.git.
     - an **FTT-based** folder that contains scripts to install and run the approach of the **FHEW-like Leveled Homomorphic Evaluation: Refined Workflow and Polished Building Blocks** paper, available at https://github.com/KAIST-CryptLab/FFT-based-CircuitBootstrap/tree/main.
+    - a new implementation relying on **Boolean circuit evaluation** and Brent's Theorem, available at https://github.com/CryptoPenguin15/tfhe-rs-examples.
+
 - the "TFHEpp" folder contains:
     - a **Fregata** folder containing scripts to install and run the **Fregata** framework that is available at https://github.com/WeiBenqiang/Fregata.git. 
     - a **Thunderbird** folder that is currently empty.
